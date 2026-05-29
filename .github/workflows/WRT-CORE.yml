@@ -258,7 +258,7 @@ jobs:
             登录地址：${{env.WRT_IP}}
             登录密码：${{env.WRT_PW}}
 
-            默认主题：${{WRT_THEME}}
+            默认主题：${{env.WRT_THEME_DISPLAY}}
             内核版本：${{env.WRT_KVER}}
             NSS版本：${{env.WRT_NSS}}
             
