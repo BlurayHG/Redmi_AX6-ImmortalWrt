@@ -236,8 +236,6 @@ jobs:
           fi
 
       - name: Release Firmware
-        env:
-          WRT_THEME_CAPITALIZED: ${{format('{0}{1}', upper(env.WRT_THEME[0]), substr(env.WRT_THEME, 1))}}
         uses: softprops/action-gh-release@master
         with:
           tag_name: ImmortalWrt-Redmi_AX6-${{env.WRT_DATE}}
@@ -253,7 +251,7 @@ jobs:
             登录地址：${{env.WRT_IP}}
             登录密码：${{env.WRT_PW}}
 
-            默认主题：${{env.WRT_THEME_CAPITALIZED}}
+            默认主题：${{WRT_THEME}}
             内核版本：${{env.WRT_KVER}}
             NSS版本：${{env.WRT_NSS}}
             
