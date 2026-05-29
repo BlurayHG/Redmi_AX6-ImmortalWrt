@@ -236,6 +236,13 @@ jobs:
           fi
 
       - name: Release Firmware
+        env:
+        WRT_THEME_DISPLAY: ${{ 
+              env.WRT_THEME == 'argon' && 'Argon' ||
+              env.WRT_THEME == 'bootstrap' && 'Bootstrap' ||
+              env.WRT_THEME == 'aurora' && 'Aurora' ||
+              env.WRT_THEME
+              }}
         uses: softprops/action-gh-release@master
         with:
           tag_name: ImmortalWrt-Redmi_AX6-${{env.WRT_DATE}}
